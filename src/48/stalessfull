@@ -1,0 +1,5 @@
+stateless component
+:-presentational,dumb,stateless
+
+and statefull component
+:-container,statefull,smart component

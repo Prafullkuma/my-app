@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(
-  <React.StrictMode>
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './70/App'
+import './App.css'
+function Clock() {
+  return (<div className="App">
+    <h1>My react App</h1>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  </div>)
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Clock />, document.getElementById('root'))

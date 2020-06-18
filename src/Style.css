@@ -1,0 +1,17 @@
+.header{
+    color:red;
+    background-color: blue;
+
+}
+ ul{
+    list-style: none;
+    }
+li{
+  float: left;
+  padding: 15px;
+  margin: 2px;
+  background-attachment: sticky;
+}
+.title{
+    color:blue;
+}
