@@ -11,6 +11,7 @@ class App extends React.Component {
         ],
         toggleHandler: false
     }
+
     switchHandler = (newName) => {
         this.setState({
             person: [

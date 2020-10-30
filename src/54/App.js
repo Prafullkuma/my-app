@@ -11,7 +11,7 @@ class App extends React.Component {
         ],
         personHandler: false
     }
-    
+
     switchHandler = (newName) => {
         this.setState({
             person: [
@@ -43,9 +43,6 @@ class App extends React.Component {
 
             <div>
                 <button style={style} onClick={this.toggleHandler}>Toggle handler</button>
-
-
-
                 {this.state.toggleHandler ?
                     <div>
                         <Person name={this.state.person[0].name}
@@ -64,4 +61,5 @@ class App extends React.Component {
             </div>)
     }
 }
+
 export default App

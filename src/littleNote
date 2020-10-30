@@ -1,0 +1,107 @@
+How React Update the DOM
+1)render() == render will run for diplay the content in to the browser
+2)shouldComponentUpdate()=prevent unessary render call
+                                   -----------------------
+shouldComponentUpdate()passed =>   | Render() is called  |
+                                   |                     |
+                                   -----------------------
+
+   ------------------------        -------------------      --------------------------
+   |  faster them real DOM |  =>   | old virtualDOM  |      |Re-rendered Virtual DOM  |
+   ------------------------        -------------------      ---------------------------
+                                
+                                ---------------------      --------------------------
+                                | <div>       <div> |      |<div>   </div>          |
+                                ----------------------     ---------------------------
+1)we have only one div 
+2)instated of div we even passised in to array (need oass an key)
+eg
+class Name extends Component{
+   render(){
+      return [
+         <p>Google</p>,    633333333332
+
+
+         <h2>Nirvana </h2>,
+         <a href="Goodl."></a>
+      ]
+   }
+}
+3)we Can call Aux.js const aux = props=> props.children
+
+ we can use like as import Aux from '../HOC/Aux
+  <Aux>
+4) import React,(Fragment) from 'react'
+we can Use Like Fragment 
+5)Save file name called WithClass.js 
+    Step:1
+    import React from 'react'
+const WithClass = props => {
+    return <div className={props.classes}>{props.children}</div>
+}
+export default WithClass
+    step :2
+import WithClass extends Component{
+   instated for using <div className={someClassName}></div>
+   we can use like this 
+   <WithClass classes={classes.app}>
+   {wrap all data here}
+   </WithClass>
+}
+6)
+withClass.js
+(HOC)
+import React from 'react'
+const WithClass = (WrapperCompnent, className1) => {
+    return <div className={className1}>
+        <WrapperCompnent />
+    </div>
+}
+export default WithClass
+
+App.js
+import withClass from '../HOC/withClass'
+
+withClass(App,classes.App)
+7) Ref in Class based component
+select and element,on any element we can add ref key word it is detected and understand by react
+ Way
+ 1)
+ <input type="text"
+ key="i3"
+ ref=((inputEl)=>{this.inputElement= inputEl})
+ onChange={this.changeBameHandler}/>
+render() function is executed first and after that we ComponentDidMount() fuction is executed
+ComponentDidMount(){
+this.inputElement.focus()
+}
+
+2)in class
+constructor(){
+    super(props)
+    this.inputElementRef=React.createRef();
+}
+
+ComponentDidMount(){
+this.inputElementRef.current.focus()
+}
+
+
+ <input type="text"
+ key="i3"
+ ref={this.inputElementRef}
+ onChange={this.changeBameHandler}/>
+
+function based component
+
+import {useRef}
+const toggleButtonRef=useRef(null)
+
+in return
+<button ref={toggleButtonRef} className={btnClass} onClick={props.clicked}/>
+
+useEffect runs after the render method
+
+toggleButtonRef.current.click()
+
+8)

@@ -1,26 +1,10 @@
 import React, { Component } from 'react';
 //import Radium, { StyleRoot } from 'radium'
-import styled from 'styled-components'
 import Person from './person';
-import '../App.css'
+import classes1 from '../App.css'
 //adding media queries
-const Styledbutton = styled.button`
-    background-color: ${props => props.alt ? 'red' : 'green'}
-    color: white;
-    font: inherit;
-    border: 1px solid blue;
-    padding: 8px;
-    cursor: pointer;
-    //69
-    &:hover {
-        background-color: ${props => props.alt ? 'lightgreen' : 'blue'};
-        color: black;
-    }
-    `;
-const Styleroot = styled.div` text-align: center;
-`;
-
-
+//modules:true
+//localIdentName:'[name]__[local]__[hash:based64:5]'
 class App extends Component {
     state = {
         persons: [
@@ -117,17 +101,16 @@ class App extends Component {
         /* 68  */
 
         return (
-
-            < Styleroot>
+            <div className="App">
 
                 <h1>Hi, I'm a React App</h1>
 
                 {/* 68  */}<p className={classes.join(' ')}>This is really working!</p>
-                <Styledbutton alt={this.state.showPersons}
+                <button className="button"
                     style={style}
-                    onClick={this.togglePersonsHandler}>Toggle Persons</Styledbutton>
+                    onClick={this.togglePersonsHandler}>Toggle Persons</button>
                 {persons}
-            </ Styleroot>
+            </div>
 
         );
         // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));

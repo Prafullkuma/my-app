@@ -11,7 +11,6 @@ class App extends React.Component {
         ],
         toggleHandler: false
     }
-
     deletePersonHanlder = (personIndex) => {
         const persons = this.state.person
         persons.splice(personIndex, 1)

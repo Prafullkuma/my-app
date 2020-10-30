@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium'
 import Person from './person';
-import '../App.css'
+
 //to add Hover thing in css we need to add package npm i --save radium
 class App extends Component {
     state = {
@@ -83,7 +83,6 @@ class App extends Component {
                     })}
 
                 </div>
-
             );
             style.backgroundColor = 'red'//67
             style[':hover'] = {
